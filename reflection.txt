@@ -11,7 +11,6 @@ further explore the capabilities of the algorithms, I set up a match between the
 compete against each other in a game of Tic-Tac-Toe. These tests allowed me to assess the performance and efficiency of the
 implemented algorithms and different game scenarios.
 
-
 Results.
 Did your system work? 
 How well? 
@@ -25,7 +24,6 @@ performance issues. The algorithm became exceedingly slow, rendering it unable t
 of the board becomes too big.
     
     The result of alpha-beta cutoff:
-
 
 Discussion. 
 Based on your results, were your methods and choices appropriate for the task? 
