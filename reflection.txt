@@ -1,8 +1,8 @@
-Introduction. 
+Introduction:
     I attempted to develop an intelligent agent capable of playing Tic-Tac_Toe and Connect Four using three distinct adversarial
 search algorithms: minimax, alpha-beta pruning, and alpha-beta cutoff.
 
-Methods. 
+Methods:
     For the implementation of minimax and alpha-beta pruning, I followed the pseudocode provided on Canvas. I referred to pseudocode
 from an online source (https://www.massey.ac.nz/~mjjohnso/notes/59302/l05.html) for the implementation of alpha-beta cutoff. 
     To evaluate the effectiveness of these algorithms, I ran several tests. Firstly, I pitted the minimax and alpha-beta pruning
@@ -11,35 +11,24 @@ further explore the capabilities of the algorithms, I set up a match between the
 compete against each other in a game of Tic-Tac-Toe. These tests allowed me to assess the performance and efficiency of the
 implemented algorithms and different game scenarios.
 
-Results.
-Did your system work? 
-How well? 
-Provide tables / numerical results if appropriate.
-
+Results:
     The implementation of both minimax and alpha-beta pruning algorithms showed excellent performance when playing 3x3 Tic-Tac-Toe,
 whether against me or each other. Throughout all the 3x3 Tic-Tac-Toe trials conducted, the final player scores consistently resulted
 in a tie, with both players achieving a score of 0.5. This outcome indicates well-balanced gameplay (or I'm just too good).
-    However, when I attempted ro run trials using the alpha-beta pruning agent in 4x4 or 5x5 Tic-Tac-Toe, I encountered significant
+    However, when I attempted to run trials using the alpha-beta pruning agent in 4x4 or 5x5 Tic-Tac-Toe, I encountered significant
 performance issues. The algorithm became exceedingly slow, rendering it unable to complete the game effectively when the dimension
 of the board becomes too big.
-    
-    The result of alpha-beta cutoff:
+    The implementation of the alpha-beta cutoff algorithm also showed remarkable efficiency and performance during Connect Four
+gameplay, consistently defeating me.
+    However, there is one issue that needs to be addressed after the game concludes, the players' scores are displayed as positive
+and negative infinity instead of the expected 1 and 0 or 0.5 values.
 
-Discussion. 
-Based on your results, were your methods and choices appropriate for the task? 
-What would you do differently next time? 
-Or if you had more time? 
-Are there any ethical implications of your system that others should be aware of?
-
-    Based on my results, I think my implementation of minimax and alpha-beta pruning were good choices for 3x3 Tic-Tac-Toe.
-    and alpha-beta cutoff would be a good choice for 4x4 and 5x5 Tic-Tac-Toe and Connect Four.
-
-    things I would do differently:
-    maybe simplify my helper functions a little more while still have them functional, as the two helper functions have a lot in common
-
-    if i had more time:
-    figure alpha-beta cutoff out
-
-    ethical implications???
-
-
+Discussion:
+    Based on my findings, I believe that my implementation of minimax and alpha-beta pruning proved to be effective choices for the
+3x3 Tic-Tac-Toe game. Additionally, using alpha-beta cutoff was a suitable decision for Connect Four, as it consistently performed
+well against me.
+    However, when it came to a 5x5 Tic-Tac-Toe game, the alpha-beta cutoff algorithm did not play optimally, and I would wan to
+further refine and improve it and have a deeper understanding of both the algorithm and its inner workings if I had more time.
+    Reflecting on my approach, I wish I had taken some time to simplify my helper functions more while maintaining their
+functionalities. Both helper functions (max and min for all algorithms I did) share lots of similarities, simplifying them would
+have been beneficial in making the code more concise and easier to manage. 
