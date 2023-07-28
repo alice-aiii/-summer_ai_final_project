@@ -1,0 +1,36 @@
+Introduction. 
+    I attempted to develop an intelligent agent capable of playing Tic-Tac_Toe and Connect Four using three distinct adversarial
+search algorithms: minimax, alpha-beta pruning, and alpha-beta cutoff.
+
+Methods. 
+    For the implementation of minimax and alpha-beta pruning, I followed the pseudocode provided on Canvas. I referred to pseudocode
+from an online source (https://www.massey.ac.nz/~mjjohnso/notes/59302/l05.html) for the implementation of alpha-beta cutoff. 
+    To evaluate the effectiveness of these algorithms, I ran several tests. Firstly, I pitted the minimax and alpha-beta pruning
+agents against myself in games of Tic-Tac-Toe. I also tried to have alpha-beta cutoff algorithm play against me in Connect Four. To
+further explore the capabilities of the algorithms, I set up a match between the minimax and alpha-beta pruning agents, having them
+compete against each other in a game of Tic-Tac-Toe. These tests allowed me to assess the performance and efficiency of the
+implemented algorithms and different game scenarios.
+
+
+Results.
+Did your system work? 
+How well? 
+Provide tables / numerical results if appropriate.
+
+    The implementation of both minimax and alpha-beta pruning algorithms showed excellent performance when playing 3x3 Tic-Tac-Toe,
+whether against me or each other. Throughout all the 3x3 Tic-Tac-Toe trials conducted, the final player scores consistently resulted
+in a tie, with both players achieving a score of 0.5. This outcome indicates well-balanced gameplay (or I'm just too good).
+    However, when I attempted ro run trials using the alpha-beta pruning agent in 4x4 or 5x5 Tic-Tac-Toe, I encountered significant
+performance issues. The algorithm became exceedingly slow, rendering it unable to complete the game effectively when the dimension
+of the board becomes too big.
+    
+    The result of alpha-beta cutoff:
+
+
+Discussion. 
+Based on your results, were your methods and choices appropriate for the task? 
+What would you do differently next time? 
+Or if you had more time? 
+Are there any ethical implications of your system that others should be aware of?
+
+
