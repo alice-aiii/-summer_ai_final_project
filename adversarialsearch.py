@@ -119,33 +119,51 @@ def alpha_beta_cutoff(
 
     state = asp.get_start_state()
     player = state.player_to_move()
-    util_val_1, move = abp_max_value(asp, state, -np.inf, np.inf, cutoff_ply, player)
-    return move
-
-def abp_max_value(asp, state, alpha, beta, depth, player):
-    if asp.is_terminal_state(state):
-        return asp.evaluate_terminal(state)[player], None
-    elif depth == 0:
-        return asp.heuristic_func(state,player), None
-    depth -= 1
+    alpha = -np.inf
+    beta = np.inf
+    bestVal = -np.inf
     for a in asp.get_available_actions(state):
-        var, m = abp_min_value(asp, asp.transition(state, a), alpha, beta, depth, player)
+        var = abp_min_value(asp, asp.transition(state, a), alpha, beta, cutoff_ply, player, heuristic_func)
+        if var > bestVal:
+            bestMove = a
+            bestVal = var
+        if bestVal >= beta:
+            break
+            # return beta, None
         alpha = max(alpha, var)
+    return bestMove
+
+    # util_val_1, move = abp_min_value(asp, state, -np.inf, np.inf, cutoff_ply, player, heuristic_func)
+    # return move
+
+def abp_max_value(asp, state, alpha, beta, depth, player, heuristic_func):
+    if asp.is_terminal_state(state):
+        return asp.evaluate_terminal(state)[player]
+    elif depth == 0:
+        return heuristic_func(state)
+    depth -= 1
+    var = -np.inf
+    for a in asp.get_available_actions(state):
+        var = max(var, abp_min_value(asp, asp.transition(state, a), alpha, beta, depth, player, heuristic_func))
+        # var = max(alpha, var)
         move = a
         if alpha >= beta:
-            return beta, None
-    return alpha, move
+            return beta
+        alpha = max(alpha, var)
+    return var
 
-def abp_min_value(asp, state, alpha, beta, depth, player):
+def abp_min_value(asp, state, alpha, beta, depth, player, heuristic_func):
     if asp.is_terminal_state(state):
-        return asp.evaluate_terminal(state)[player], None
+        return asp.evaluate_terminal(state)[player]
     elif depth == 0:
-        return asp.heuristic_func(state,player), None
+        return heuristic_func(state)
     depth -= 1
+    var = np.inf
     for a in asp.get_available_actions(state):
-        var, m = abp_max_value(asp, asp.transition(state, a), alpha, beta, depth, player)
+        var = min(var, abp_max_value(asp, asp.transition(state, a), alpha, beta, depth, player, heuristic_func))
         beta = min(beta, var)
         move = a
         if beta <= alpha:
-            return alpha, None
-    return beta, move
+            return alpha
+        beta = min(beta, var)
+    return var
