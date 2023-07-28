@@ -31,4 +31,15 @@ What would you do differently next time?
 Or if you had more time? 
 Are there any ethical implications of your system that others should be aware of?
 
+    Based on my results, I think my implementation of minimax and alpha-beta pruning were good choices for 3x3 Tic-Tac-Toe.
+    and alpha-beta cutoff would be a good choice for 4x4 and 5x5 Tic-Tac-Toe and Connect Four.
+
+    things I would do differently:
+    maybe simplify my helper functions a little more while still have them functional, as the two helper functions have a lot in common
+
+    if i had more time:
+    figure alpha-beta cutoff out
+
+    ethical implications???
+
 
