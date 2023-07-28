@@ -131,7 +131,6 @@ def abp_max_value(asp, state, alpha, beta, depth, player):
     for a in asp.get_available_actions(state):
         var, m = abp_min_value(asp, asp.transition(state, a), alpha, beta, depth, player)
         alpha = max(alpha, var)
-        # alpha = max(alpha, abp_min_value(asp, asp.transition(state, a), alpha, beta, depth, player))
         move = a
         if alpha >= beta:
             return beta, None
@@ -146,7 +145,6 @@ def abp_min_value(asp, state, alpha, beta, depth, player):
     for a in asp.get_available_actions(state):
         var, m = abp_max_value(asp, asp.transition(state, a), alpha, beta, depth, player)
         beta = min(beta, var)
-        # beta = min(beta, abp_max_value(asp, asp.transition(state, a), alpha, beta, depth, player))
         move = a
         if beta <= alpha:
             return alpha, None
